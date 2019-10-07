@@ -11,6 +11,7 @@ public List<String> getcards(){
 return cards;
 }
 public void bankerCall(){
+	
 }
 
 
@@ -22,11 +23,13 @@ return String.format("%s", cards);
 
 
 
-
 public static void main(String[] args){
 Scanner in = new Scanner(System.in);
-List<String>Linkedcards=Arrays.asList("card1","card2","card3","card4","card5","card6","card7","card8","card9","card10","card11","card12","card13");
-
+String[] cards ={"card1","card2","card3","card4","card5","card6","card7","card8","card9","card10","card11","card12","card13"};
+List<String>Linkedcards = new ArrayList<>();
+for(int i =0;i<cards.length;i++){
+Linkedcards.add(cards[i]);
+}
 String[] money ={"R100","200","R300","R1","R5000","R10000","R40000","R60000","75000","100000",
 "250000","1000000","R2"};
 List<String>listMoney = new ArrayList<>();
@@ -45,13 +48,22 @@ if((p1.getcards()).contains(num)){
 String card = listMoney.get((p1.getcards()).indexOf(num));
 System.out.println(card);
 }
+
+if((p1.getcards()).contains(num)){
+	String card = Linkedcards.remove((p1.getcards()).indexOf(num));
+	System.out.println("available cards: " + p1);
+}
+
 else{
 System.out.println("not found");
 }
 }
-//p1.shuffle(listMoney);
-System.out.println(p1);
+
+
+
+
 
 
 }
 }
+
